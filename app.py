@@ -98,11 +98,15 @@ st.write(f"φ outlet = {phi_output:.3f}")
 change= (phi_output-phi_input)/phi_input
 error = change*100
 
+if error >0:
+    st.write(f"Output Exhaust is more Rich compared to Inlet")
+elif error<0:
+    st.write(f"Output Exhaust is more Leaner compared to inlet")
+else:
+    st.write("100% Combustion")
 if abs(error) <=3:
    st.success(f"Combustion  Ok  error = {error:.1f} %")
 elif abs(error) <=5:
    st.warning(f"Deviation is high = {error:.1f}%")
 else:
    st.error(F"check System = {error:.1f}%")
-
-ide
