@@ -18,6 +18,11 @@ st.header("Energy share of NH3 and H2")
 E_NH3 = st.number_input("NH3 energy share [%]", 0.0, 100.0, 70.0)
 E_H2  = st.number_input("H2 energy share [%]",  0.0, 100.0, 30.0)
 
+if abs(E_NH3 +E_H2 -100)>0.0001:
+    st.error("Total Energy Share must be 100%")
+    st.stop()
+    
+
 st.header("volume Flow of fuel")
 V_fuel = st.number_input("Fuel flow [Nm³/min]", 0.0, 1.0, 0.05, step=0.001)
 
