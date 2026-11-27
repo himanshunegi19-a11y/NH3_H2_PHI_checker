@@ -70,6 +70,7 @@ N2_mole =0.79* Air_mole
 F_fuel = V_fuel*1000/22.414
 N2_out = N2_mole + 0.5*x_input_NH3*F_fuel
 O2_out = O2_mole-(0.75*x_input_NH3 +0.5*x_input_H2) *F_fuel
+O2_out = O2_out - 0.5*(x_NO+x_N20)*(N2_out+O2_out)
 O2_exhaust_dry= O2_out/(O2_out+N2_out)*100
 
 st.write(f"O2 dry expected = {O2_exhaust_dry:.3f}%")
