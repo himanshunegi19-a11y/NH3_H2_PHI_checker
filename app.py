@@ -24,7 +24,7 @@ if abs(E_NH3 +E_H2 -100)>0.0001:
     
 
 st.header("volume Flow of fuel")
-V_fuel = st.number_input("Fuel flow [Nm³/min]", 0.0000, 1.0000, 0.0500, step=0.00001)
+V_fuel = st.number_input("Fuel flow [Nm³/min]", 0.0000, 1.0000, 0.0500, step=0.0001, format="%.4f")
 
 st.header("Inlet conditions")
 T_NH3 = st.number_input("NH3 inlet temperature [K]", 273.0, 1000.0, 298.0)
